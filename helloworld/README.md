@@ -21,7 +21,42 @@ int function(int n);
 int main(){return 0};
 int function(int n){return};
 ```  
-declare the function before use.
+declare the function before use.  
+
+### In file of ```pointer.c```, there is a challenge of pointer to new C baby:  
+I will start from some symbols  
+```*``` means dereference, get value from the address.  
+```&``` has two kinds of meaning, reference operator or address operator:  
+* reference operator  
+```
+int N = 3;
+int &M = N;   
+// M and N point to the same block of memory
+```
+* address operator  
+```c
+int N = 3;
+int M = &N;
+// M get the address of N
+int *M = &N;
+// with dereference pointer, we can get the value from the address
+```
+We can also get the content of array with pointer.  
+Here is the print out result of ```pointer.c```:  
+```c
+ref r is 3
+y is -1722773048
+z is 4
+Please input a string>
+hello
+My input is h at 0x7ffd995091e0
+My input is e at 0x7ffd995091e1
+My input is l at 0x7ffd995091e2
+My input is l at 0x7ffd995091e3
+My input is o at 0x7ffd995091e4
+// If you want to print the whole string in the buffer at one time, you can
+printf("My whole input is %s\n",str);
+```
 
 ### In file of ```*_helloworld.c```, what we want to do is to *add function before the main function*. :cold_sweat:
 
