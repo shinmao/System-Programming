@@ -71,6 +71,28 @@ a1.id = 1;
 b2->hello = "hello";    // different way to access
 ```
 
+### In file of ```char_str.c```, pay attention to some string operation!
+The following is the result of the file
+```c
+Please input some stings into buffer>
+helloworld
+In the buffer is: helloworld
+
+The length is 11
+Please input same strings again into buffer>
+helloworld
+with scanf in buffer> helloworld
+with scanf str length is 10
+You can also try to input string with space>
+hello world
+with space in buffer, the string is hello
+the lenght of string now is 5
+```
+Q1: Why the same string can cause different ```strlen()``` with ```fgets()``` and ```scanf()```?  
+Because fgets would add one more null pointer to the eof; therefore; the result of fgets would more than scanf by one.  
+Q2: Why the scanf only get "hello" in the last question?  
+Because scanf **cannot** accept space!
+
 ### In file of ```*_helloworld.c```, what we want to do is to *add function before the main function*. :cold_sweat:
 
 1.In Linux system, we will use the attribute of consturctor.
