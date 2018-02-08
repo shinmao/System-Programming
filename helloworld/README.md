@@ -58,6 +58,19 @@ My input is o at 0x7ffd995091e4
 printf("My whole input is %s\n",str);
 ```
 
+### In file of ```ptr_struct.c```, we also can access structure with pointer!
+```c
+struct A{
+  int id;
+  char hello[10];
+};
+struct A a1;
+struct A a2;
+struct A *b2 = &a2;    // use pointer to access structure
+a1.id = 1;
+b2->hello = "hello";    // different way to access
+```
+
 ### In file of ```*_helloworld.c```, what we want to do is to *add function before the main function*. :cold_sweat:
 
 1.In Linux system, we will use the attribute of consturctor.
