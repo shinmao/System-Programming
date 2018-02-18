@@ -70,6 +70,7 @@ struct A *b2 = &a2;    // use pointer to access structure
 a1.id = 1;
 b2->hello = "hello";    // different way to access
 ```
+Memory of the elements in structure might not be contigious because there could be some padding bytes...  
 
 ### In file of ```char_str.c```, pay attention to some string operation!
 ```strcpy()``` would paste ```\0``` at the end of string  
@@ -99,7 +100,15 @@ the lenght of string now is 5
 Q1: Why the same string can cause different ```strlen()``` with ```fgets()``` and ```scanf()```?  
 Because fgets would add one more null pointer to the eof; therefore; the result of fgets would more than scanf by one.  
 Q2: Why the scanf only get "hello" in the last question?  
-Because scanf **cannot** accept space!
+Because scanf **cannot** accept space!  
+
+### In file of ```argv.c```, we can learn how to get argument of program
+```c
+int main(int argc, char *argv[]){
+       // the argc can get the count of argument including program itself
+       // the all argument is stored in argv[]
+}
+```
 
 ### In file of ```*_helloworld.c```, what we want to do is to *add function before the main function*. :cold_sweat:
 
