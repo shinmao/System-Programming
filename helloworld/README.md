@@ -72,6 +72,14 @@ b2->hello = "hello";    // different way to access
 ```
 
 ### In file of ```char_str.c```, pay attention to some string operation!
+```strcpy()``` would paste ```\0``` at the end of string  
+```c
+char str[12];
+strcpy(str,"hello world");
+// In fact, we can just only put string of length 11 bytes into it
+// because the str[12] might be \0
+```  
+```strlen()``` would take words before ```\0``` into count  
 The following is the result of the file
 ```c
 Please input some stings into buffer>
