@@ -1,4 +1,5 @@
-# C
-The Review practice for C language
+# System Programming
+First part is the review of C programming  
 
-Be careful that I will not include library in this project, just leave the key file in repository.
+## Reference
+GMU CS-531-P01 (Spring 2018) Instructor: Harold Greenwald
