@@ -110,6 +110,15 @@ int main(int argc, char *argv[]){
 }
 ```
 
+### In file of ```fsp.c```, we use the file stream pointer to ```fopen()```
+read file -> error if no such file -> print the file content  
+
+### In file of ```fsp_w.c```, we write into file with ```fprintf()```
+```fprintf(ptr, "format string", content);```  
+
+### ```mal_stu.c``` is interesting example to malloc our struct!!
+```printf("%s",(ptr+i)->c);```
+
 ### In file of ```*_helloworld.c```, what we want to do is to *add function before the main function*. :cold_sweat:
 
 1.In Linux system, we will use the attribute of consturctor.
