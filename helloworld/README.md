@@ -130,7 +130,26 @@ if((ptr = getenv("HOME")) == (char *)0){
 the code above shows how to print out specific env variable.  
 
 ### ```scope_rule.c``` show an important concept of scope
-local variable and global variable are in different scope.
+```c
+int a;         // global 
+int main(){
+	int a, b, c;
+	a = 7;                 // main local
+	b = f1();
+	c = f2(a,b);
+	printf("%d %d %d\n",a,b,c);
+	return 0;                    }
+int f1(void){
+	a = 12;
+	printf("%d",a);
+	return(a+5);     }
+int f2(int x, int a){
+	printf("%d",a);
+	return(x*a);      }
+/** OUTPUT: 12 17 7 17 119 **/
+```
+local variable and global variable are in different scope.  
+12 comes from the f1 function print, here f1 change the global variable a to 12. Second, main function pass x=7, a=17 into f2 function. Therefore, f2 print out 17 as a. At the end, main function print out variable in his local scope.
 
 ### In file of ```*_helloworld.c```, what we want to do is to *add function before the main function*. :cold_sweat:
 
