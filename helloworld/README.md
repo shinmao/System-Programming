@@ -119,6 +119,19 @@ read file -> error if no such file -> print the file content
 ### ```mal_stu.c``` is interesting example to malloc our struct!!
 ```printf("%s",(ptr+i)->c);```
 
+### ```env.c``` show how to print the system variable
+```c
+if((ptr = getenv("HOME")) == (char *)0){
+		printf("HOME is not defined\n");
+	}else{
+		printf("HOME is %s",ptr);
+	}
+```
+the code above shows how to print out specific env variable.  
+
+### ```scope_rule.c``` show an important concept of scope
+local variable and global variable are in different scope.
+
 ### In file of ```*_helloworld.c```, what we want to do is to *add function before the main function*. :cold_sweat:
 
 1.In Linux system, we will use the attribute of consturctor.
