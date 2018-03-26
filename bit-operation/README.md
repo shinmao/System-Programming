@@ -107,3 +107,27 @@ int main()
 }
 // OUTPUT: hello -> olleh
 ```
+
+## union v.s. struct
+```union``` is a type of data structure similar to struct.  
+The difference is **union use same block of memory for each variables**.  
+```c
+int main(){
+
+        union a
+        {
+                short i;
+                char ch[2];
+        };
+        union a u;
+        printf("Size of a is %lu\n",sizeof(u));       // Size of a is 2
+        u.ch[0] = 3;
+        u.ch[1] = 2;
+        printf("%d,%d,%d\n",u.ch[0],u.ch[1],u.i);   // 3,2,515
+        u.i = 520;
+        printf("%d,%d,%d\n",u.ch[0],u.ch[1],u.i);   // 8,2,520
+
+        return 0;
+}
+```
+It is an interesting example of union. First, the size of a is 2 because vairables share same block of memory. Type of short and array of char are all 2 bytes. Second, we should imagine that i and ch[2] are same place now. Therefore, if we give u.ch[0] 3 and u.ch[1] 2, the number in memory would become ```00000010 00000011```. That is also why u.i has the value of 515. In other words, if we give i 520, we just need to format it into binary set, then can find how much u.ch[0] and u.ch[1] are.
