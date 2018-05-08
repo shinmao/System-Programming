@@ -1,5 +1,5 @@
 # Bit Operation and Bit mask
-In C language, we can make ```&```, ```|```, and ```^(XOR)```... several bit-operation on integers. Besides, we can also change our integer into binary format.  
+In C language, we can make `&`, `|`, and `^(XOR)`... several bit-operation on integers. Besides, we can also change our integer into binary format.  
 
 ## Bit Operation
 ```c
@@ -11,7 +11,7 @@ printf("%d",c);     // 12
 ```
 
 ## Bit mask
-In the file of ```bitwise_op.c```, there is an interesting example to change integer to binary format
+In the file of `bitwise_op.c`, there is an interesting example to change integer to binary format
 ```c
 my_short = (short) input_int;
 	printf ("Binary value = ");
@@ -109,7 +109,7 @@ int main()
 ```
 
 ## union v.s. struct
-```union``` is a type of data structure similar to struct.  
+`union` is a type of data structure similar to struct.  
 The difference is **union use same block of memory for each variables**.  
 ```c
 int main(){
@@ -130,4 +130,10 @@ int main(){
         return 0;
 }
 ```
-It is an interesting example of union. First, the size of a is 2 because vairables share same block of memory. Type of short and array of char are all 2 bytes. Second, we should imagine that i and ch[2] are same place now. Therefore, if we give u.ch[0] 3 and u.ch[1] 2, the number in memory would become ```00000010 00000011```. That is also why u.i has the value of 515. In other words, if we give i 520, we just need to format it into binary set, then can find how much u.ch[0] and u.ch[1] are.
+It is an interesting example of union. First, the size of a is 2 because vairables share same block of memory. Type of short and array of char are all 2 bytes. Second, we should imagine that `i` and `ch[2]` are same place now. Therefore, if we give `u.ch[0]` 3 and `u.ch[1]` 2, the number in memory would become `00000010 00000011`. That is also why `u.i` has the value of 515. In other words, if we give i 520, we just need to format it into binary set, then can find how much `u.ch[0]` and `u.ch[1]` are.  
+
+## Big endian v.s. Little endian
+Based on CPU instead of OS (based on hardware not software!  
+Big endian: The `least` significant byte is stored at the `highest` memory address.  
+Little endian: The `least` significant byte is stored at the `lowest` memory address.  
+
