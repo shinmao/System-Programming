@@ -14,7 +14,7 @@ int exe = 0;
 void *add1(){
 	for(;;){
 		pthread_mutex_lock(&count);
-		printf("here is %d\n",exe++);
+		printf("here is %d in add1\n",exe++);
 		pthread_cond_wait(&condition,&count);
 		countt++;
 		printf("pid1's counter is %d\n",countt);
@@ -25,6 +25,7 @@ void *add1(){
 }
 void *add2(){
 	for(;;){
+		printf("***\n");
 		pthread_mutex_lock(&count);
 		if(countt<ph1 || countt>ph2){
 			pthread_cond_signal(&condition);
